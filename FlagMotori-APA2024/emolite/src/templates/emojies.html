@@ -1,0 +1,47 @@
+<!doctype>
+<html>
+	<head>
+		<title>{{ title }} - Emoji lite</title>
+		<style>
+			#emojies {
+			  font-family: Arial, Helvetica, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			#emojies td, #emojies th {
+			  border: 1px solid #ddd;
+			  padding: 8px;
+			}
+
+			#emojies tr:nth-child(even){background-color: #f2f2f2;}
+
+			#emojies tr:hover {background-color: #ddd;}
+
+			#emojies th {
+			  padding-top: 12px;
+			  padding-bottom: 12px;
+			  text-align: left;
+			  background-color: #04AA6D;
+			  color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Emojies</h1>
+		<table id="emojies">
+			<thead>
+				<th>Emoji</th>
+				<th>Meaning</th>
+			</thead>
+			<tbody>
+				{% for emoji in emoji_list %}
+					<tr>
+						<td>{{ emoji[0] }}</td>
+						<td>{{ emoji[1] }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>
